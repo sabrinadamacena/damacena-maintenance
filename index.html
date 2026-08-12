@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>damacena.work — redirect</title>
+  <title>loading... damacena.work</title>
+
+  <!-- Automatic redirect after 3 seconds -->
+  <meta http-equiv="refresh" content="3;url=https://readymag.website/u542318838/5701574/">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +39,7 @@
 
     .page {
       min-height: 100vh;
+
       padding: 32px;
 
       display: flex;
@@ -52,6 +56,7 @@
       font-family: 'Courier New', monospace;
 
       font-size: 12px;
+
       letter-spacing: 0.08em;
 
       color: #777777;
@@ -69,25 +74,12 @@
     ========================= */
 
     .content {
-      max-width: 1000px;
+      width: 100%;
+      max-width: 1100px;
 
       margin: auto 0;
 
       padding: 10vh 0;
-    }
-
-    .eyebrow {
-      font-family: 'Courier New', monospace;
-
-      font-size: 13px;
-
-      color: #777777;
-
-      margin-bottom: 24px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.06em;
     }
 
 
@@ -98,24 +90,23 @@
     .glitch-wrapper {
       display: inline-block;
 
-      margin-bottom: 42px;
+      margin-bottom: 34px;
     }
 
     .glitch-text {
       font-family: 'Space Grotesk', sans-serif;
 
-      font-size: clamp(56px, 9vw, 130px);
+      font-size: clamp(64px, 11vw, 150px);
 
       font-weight: 600;
 
       line-height: 0.9;
 
-      letter-spacing: -0.06em;
+      letter-spacing: -0.065em;
 
       color: #E94140;
 
-      display: flex;
-      flex-direction: column;
+      display: inline-block;
 
       cursor: default;
     }
@@ -200,7 +191,7 @@
 
 
     /* =========================
-       GLITCH KEYFRAMES — CYAN
+       GLITCH ANIMATION 1
     ========================= */
 
     @keyframes glitch-loop-1 {
@@ -239,7 +230,7 @@
 
 
     /* =========================
-       GLITCH KEYFRAMES — MAGENTA
+       GLITCH ANIMATION 2
     ========================= */
 
     @keyframes glitch-loop-2 {
@@ -311,79 +302,78 @@
 
 
     /* =========================
-       DESCRIPTION
+       REDIRECT MESSAGE
     ========================= */
 
-    .description {
-      max-width: 560px;
-
-      font-size: 18px;
-
-      line-height: 1.5;
-
-      color: #F2F2F2;
-
-      margin-bottom: 34px;
-    }
-
-    .description strong {
-      color: #FFFFFF;
-
-      font-weight: 400;
-    }
-
-
-    /* =========================
-       BUTTON
-    ========================= */
-
-    .button {
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 16px;
-
-      background: #F2F2F2;
-
-      color: #191919;
-
-      text-decoration: none;
-
-      padding: 16px 22px;
-
-      font-family: 'Jost', sans-serif;
+    .redirect-message {
+      font-family: 'Courier New', monospace;
 
       font-size: 14px;
 
-      font-weight: 600;
+      color: #F2F2F2;
 
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-
-      background: #FFFFFF;
+      margin-bottom: 22px;
     }
 
 
     /* =========================
-       FREELANCE
+       LOADING BAR
     ========================= */
 
-    .freelance {
+    .loading {
+      width: min(420px, 100%);
+
+      height: 2px;
+
+      background: #3A3A3A;
+
+      overflow: hidden;
+    }
+
+    .loading-bar {
+      width: 0%;
+      height: 100%;
+
+      background: #E94140;
+
+      animation: loading 3s linear forwards;
+    }
+
+    @keyframes loading {
+
+      0% {
+        width: 0%;
+      }
+
+      100% {
+        width: 100%;
+      }
+
+    }
+
+
+    /* =========================
+       MANUAL LINK
+    ========================= */
+
+    .manual-link {
+      display: block;
+
+      margin-top: 18px;
+
       font-family: 'Courier New', monospace;
 
-      font-size: 12px;
+      font-size: 11px;
 
-      line-height: 1.5;
+      color: #666666;
 
-      color: #777777;
+      text-decoration: none;
 
-      margin-top: 55px;
+      transition: color 0.2s ease;
+    }
+
+    .manual-link:hover {
+      color: #F2F2F2;
     }
 
 
@@ -427,11 +417,11 @@
       }
 
       .glitch-text {
-        font-size: clamp(48px, 15vw, 82px);
+        font-size: clamp(52px, 17vw, 90px);
       }
 
-      .description {
-        font-size: 16px;
+      .redirect-message {
+        font-size: 13px;
       }
 
       footer {
@@ -454,18 +444,13 @@
     <!-- STATUS -->
 
     <div class="status">
-      <span>●</span> perdoa a bagunça!
+      <span>●</span> status / redirecting
     </div>
 
 
-    <!-- CONTENT -->
+    <!-- MAIN -->
 
     <section class="content">
-
-
-      <div class="eyebrow">
-        🚧 portfolio maintenance 🚧
-      </div>
 
 
       <!-- GLITCH TITLE -->
@@ -476,16 +461,9 @@
 
           <span
             class="glitch-line"
-            data-text="eita,"
+            data-text="é por aqui."
           >
-            eita,
-          </span>
-
-          <span
-            class="glitch-line"
-            data-text="tô em manutenção."
-          >
-            tô em manutenção.
+            é por aqui.
           </span>
 
         </div>
@@ -493,41 +471,30 @@
       </div>
 
 
-      <!-- DESCRIPTION -->
+      <!-- MESSAGE -->
 
-      <p class="description">
-
-        my portfolio is going through some changes right now.
-
-        <br><br>
-
-        while I figure this whole website thing out,
-        <strong>you can still access my work below.</strong>
-
+      <p class="redirect-message">
+        taking you to my portfolio...
       </p>
 
 
-      <!-- PORTFOLIO BUTTON -->
+      <!-- LOADING -->
+
+      <div class="loading">
+
+        <div class="loading-bar"></div>
+
+      </div>
+
+
+      <!-- FALLBACK -->
 
       <a
-        class="button"
+        class="manual-link"
         href="https://readymag.website/u542318838/5701574/"
-        target="_blank"
-        rel="noopener noreferrer"
       >
-        VISIT MY PORTFOLIO →
+        click here if nothing happens →
       </a>
-
-
-      <!-- FREELANCE -->
-
-      <p class="freelance">
-
-        also available for freelance work while I figure
-        <br>
-        this whole website thing out. 👀
-
-      </p>
 
 
     </section>
@@ -538,7 +505,7 @@
     <footer>
 
       <span>
-        sabrina damacena | creative art director
+        sabrina damacena / art director
       </span>
 
       <span>
