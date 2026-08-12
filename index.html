@@ -4,14 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>damacena.work — temporarily offline</title>
+  <title>damacena.work — redirect</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@400&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================
+       BASE
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -29,18 +37,25 @@
     .page {
       min-height: 100vh;
       padding: 32px;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    /* STATUS */
+
+    /* =========================
+       STATUS
+    ========================= */
 
     .status {
       font-family: 'Courier New', monospace;
+
       font-size: 12px;
       letter-spacing: 0.08em;
+
       color: #777777;
+
       text-transform: uppercase;
     }
 
@@ -48,80 +63,117 @@
       color: #E94140;
     }
 
-    /* MAIN */
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
 
     .content {
       max-width: 1000px;
+
       margin: auto 0;
+
       padding: 10vh 0;
     }
 
     .eyebrow {
       font-family: 'Courier New', monospace;
+
       font-size: 13px;
+
       color: #777777;
+
       margin-bottom: 24px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.06em;
     }
 
-    /* GLITCH TITLE */
+
+    /* =========================
+       GLITCH TITLE
+    ========================= */
 
     .glitch-wrapper {
       display: inline-block;
+
       margin-bottom: 42px;
     }
 
     .glitch-text {
       font-family: 'Space Grotesk', sans-serif;
+
       font-size: clamp(56px, 9vw, 130px);
+
       font-weight: 600;
+
       line-height: 0.9;
+
       letter-spacing: -0.06em;
 
       color: #E94140;
 
-      position: relative;
-      text-decoration: none;
-      display: inline-block;
+      display: flex;
+      flex-direction: column;
 
       cursor: default;
     }
 
-    .glitch-text::before,
-    .glitch-text::after {
+    .glitch-line {
+      position: relative;
+
+      display: block;
+
+      width: fit-content;
+    }
+
+
+    /* Ghost layers */
+
+    .glitch-line::before,
+    .glitch-line::after {
       content: attr(data-text);
 
       position: absolute;
+
       top: 0;
       left: 0;
 
       width: 100%;
       height: 100%;
 
-      opacity: 0.8;
-      background: transparent;
+      opacity: 0;
 
       pointer-events: none;
     }
 
-    /* CYAN */
 
-    .glitch-text::before {
+    /* Cyan */
+
+    .glitch-line::before {
       color: #00FFFF;
+
       z-index: -1;
     }
 
-    /* MAGENTA */
 
-    .glitch-text::after {
+    /* Magenta */
+
+    .glitch-line::after {
       color: #FF00FF;
+
       z-index: -2;
     }
 
-    /* HOVER GLITCH */
 
-    .glitch-text:hover::before {
+    /* =========================
+       GLITCH HOVER
+    ========================= */
+
+    .glitch-line:hover::before {
+      opacity: 0.8;
+
       animation:
         glitch-loop-1
         0.4s
@@ -129,7 +181,9 @@
         both infinite;
     }
 
-    .glitch-text:hover::after {
+    .glitch-line:hover::after {
+      opacity: 0.8;
+
       animation:
         glitch-loop-2
         0.4s
@@ -137,16 +191,17 @@
         both infinite;
     }
 
-    .glitch-text:hover {
+    .glitch-line:hover {
       animation:
         glitch-main
         0.4s
         both infinite;
-
-      color: #E94140;
     }
 
-    /* GLITCH KEYFRAMES */
+
+    /* =========================
+       GLITCH KEYFRAMES — CYAN
+    ========================= */
 
     @keyframes glitch-loop-1 {
 
@@ -156,22 +211,22 @@
       }
 
       20% {
-        transform: translate(-4px, 2px);
+        transform: translate(-3px, 1px);
         clip-path: inset(10% 0 40% 0);
       }
 
       40% {
-        transform: translate(4px, -2px);
+        transform: translate(3px, -1px);
         clip-path: inset(40% 0 10% 0);
       }
 
       60% {
-        transform: translate(-4px, 0);
+        transform: translate(-3px, 0);
         clip-path: inset(80% 0 5% 0);
       }
 
       80% {
-        transform: translate(2px, 2px);
+        transform: translate(2px, 1px);
         clip-path: inset(20% 0 60% 0);
       }
 
@@ -179,7 +234,13 @@
         transform: translate(0);
         clip-path: inset(0 0 0 0);
       }
+
     }
+
+
+    /* =========================
+       GLITCH KEYFRAMES — MAGENTA
+    ========================= */
 
     @keyframes glitch-loop-2 {
 
@@ -189,22 +250,22 @@
       }
 
       20% {
-        transform: translate(4px, -2px);
+        transform: translate(3px, -1px);
         clip-path: inset(30% 0 10% 0);
       }
 
       40% {
-        transform: translate(-4px, 2px);
+        transform: translate(-3px, 1px);
         clip-path: inset(10% 0 50% 0);
       }
 
       60% {
-        transform: translate(4px, 0);
+        transform: translate(3px, 0);
         clip-path: inset(50% 0 20% 0);
       }
 
       80% {
-        transform: translate(-2px, -2px);
+        transform: translate(-2px, -1px);
         clip-path: inset(0% 0 80% 0);
       }
 
@@ -212,7 +273,13 @@
         transform: translate(0);
         clip-path: inset(0 0 0 0);
       }
+
     }
+
+
+    /* =========================
+       MAIN GLITCH MOVEMENT
+    ========================= */
 
     @keyframes glitch-main {
 
@@ -221,32 +288,37 @@
       }
 
       20% {
-        transform: translate(2px, -1px);
+        transform: translate(1px, -0.5px);
       }
 
       40% {
-        transform: translate(-2px, 1px);
+        transform: translate(-1px, 0.5px);
       }
 
       60% {
-        transform: translate(2px, 1px);
+        transform: translate(1px, 0.5px);
       }
 
       80% {
-        transform: translate(-2px, -1px);
+        transform: translate(-1px, -0.5px);
       }
 
       100% {
         transform: translate(0);
       }
+
     }
 
-    /* DESCRIPTION */
+
+    /* =========================
+       DESCRIPTION
+    ========================= */
 
     .description {
       max-width: 560px;
 
       font-size: 18px;
+
       line-height: 1.5;
 
       color: #F2F2F2;
@@ -256,17 +328,24 @@
 
     .description strong {
       color: #FFFFFF;
+
       font-weight: 400;
     }
 
-    /* BUTTON */
+
+    /* =========================
+       BUTTON
+    ========================= */
 
     .button {
       display: inline-flex;
+
       align-items: center;
+
       gap: 16px;
 
       background: #F2F2F2;
+
       color: #191919;
 
       text-decoration: none;
@@ -274,7 +353,9 @@
       padding: 16px 22px;
 
       font-family: 'Jost', sans-serif;
+
       font-size: 14px;
+
       font-weight: 600;
 
       transition:
@@ -284,15 +365,20 @@
 
     .button:hover {
       transform: translateY(-3px);
+
       background: #FFFFFF;
     }
 
-    /* FREELANCE */
+
+    /* =========================
+       FREELANCE
+    ========================= */
 
     .freelance {
       font-family: 'Courier New', monospace;
 
       font-size: 12px;
+
       line-height: 1.5;
 
       color: #777777;
@@ -300,11 +386,16 @@
       margin-top: 55px;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       display: flex;
+
       justify-content: space-between;
+
       align-items: flex-end;
 
       gap: 20px;
@@ -320,7 +411,10 @@
       letter-spacing: 0.05em;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -342,38 +436,64 @@
 
       footer {
         flex-direction: column;
+
         align-items: flex-start;
       }
+
     }
 
   </style>
 </head>
 
+
 <body>
 
   <main class="page">
 
+
+    <!-- STATUS -->
+
     <div class="status">
-      <span>●</span> status / temporarily offline
+      <span>●</span> perdoa a bagunça!
     </div>
+
+
+    <!-- CONTENT -->
 
     <section class="content">
 
+
       <div class="eyebrow">
-        🚧 portfolio maintenance
+        🚧 portfolio maintenance 🚧
       </div>
+
+
+      <!-- GLITCH TITLE -->
 
       <div class="glitch-wrapper">
 
-        <div
-          class="glitch-text"
-          data-text="eita,&#10;tô em manutenção."
-        >
-          eita,<br>
-          tô em manutenção.
+        <div class="glitch-text">
+
+          <span
+            class="glitch-line"
+            data-text="eita,"
+          >
+            eita,
+          </span>
+
+          <span
+            class="glitch-line"
+            data-text="tô em manutenção."
+          >
+            tô em manutenção.
+          </span>
+
         </div>
 
       </div>
+
+
+      <!-- DESCRIPTION -->
 
       <p class="description">
 
@@ -386,6 +506,9 @@
 
       </p>
 
+
+      <!-- PORTFOLIO BUTTON -->
+
       <a
         class="button"
         href="https://readymag.website/u542318838/5701574/"
@@ -395,6 +518,9 @@
         VISIT MY PORTFOLIO →
       </a>
 
+
+      <!-- FREELANCE -->
+
       <p class="freelance">
 
         also available for freelance work while I figure
@@ -403,15 +529,24 @@
 
       </p>
 
+
     </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
 
-      <span>sabrina damacena / art director</span>
+      <span>
+        sabrina damacena | creative art director
+      </span>
 
-      <span>2026</span>
+      <span>
+        2026
+      </span>
 
     </footer>
+
 
   </main>
 
