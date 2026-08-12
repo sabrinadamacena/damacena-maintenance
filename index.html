@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>damacena.work — temporarily offline</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #191919;
+      color: #f2f2f2;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .status {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: #8f8f8f;
+      text-transform: uppercase;
+    }
+
+    .status span {
+      color: #f2f2f2;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto 0;
+      padding: 10vh 0;
+    }
+
+    .eyebrow {
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      color: #8f8f8f;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(52px, 9vw, 130px);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      font-weight: 700;
+      max-width: 950px;
+      margin-bottom: 42px;
+    }
+
+    .description {
+      max-width: 560px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #b8b8b8;
+      margin-bottom: 34px;
+    }
+
+    .description strong {
+      color: #f2f2f2;
+      font-weight: 500;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #f2f2f2;
+      color: #191919;
+      text-decoration: none;
+      padding: 16px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #ffffff;
+    }
+
+    .freelance {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #777777;
+      margin-top: 55px;
+    }
+
+    .freelance a {
+      color: #bdbdbd;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 22px;
+      }
+
+      .content {
+        padding: 8vh 0;
+      }
+
+      h1 {
+        font-size: clamp(48px, 15vw, 80px);
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="status">
+      <span>●</span> status / temporarily offline
+    </div>
+
+    <section class="content">
+
+      <div class="eyebrow">
+        🚧 portfolio maintenance
+      </div>
+
+      <h1>eita,<br>tô em manutenção.</h1>
+
+      <p class="description">
+        my portfolio is going through some changes right now.
+        <br><br>
+        while I figure this whole website thing out,
+        <strong>you can still access my work below.</strong>
+      </p>
+
+      <a
+        class="button"
+        href="https://readymag.website/u542318838/5701574/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VISIT MY PORTFOLIO →
+      </a>
+
+      <p class="freelance">
+        also available for freelance work while I figure
+        <br class="mobile-break">
+        this whole website thing out. 👀
+      </p>
+
+    </section>
+
+    <footer>
+      <span>sabrina damacena / art director</span>
+      <span>2026</span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
